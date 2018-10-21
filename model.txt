@@ -1,0 +1,36 @@
+CREW (greg)
+JOB
+  title
+  description
+  <LOCATION-id>  
+  due date
+  *tasks (OneToMany)
+
+ROLE
+  type
+  *workers* (ManyToMany)
+  *tasks
+
+TASK
+  <JOB-id>>  (ManyToOne)
+  <ROLE-id>
+  description
+  *workunits
+  isDone
+
+LOCATION
+  state
+  city
+  street
+  numb
+
+WORKER
+  name
+  *roles*
+  *workunits
+
+WORKUNIT
+  <TASK-id>>
+  <WORKER-id>>
+  date
+  hours
